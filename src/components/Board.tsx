@@ -79,7 +79,11 @@ const Board: React.FC = () => {
       <div
         className="board-header"
       >
-        <input type='text' value={newNoteText} onChange={updateNewNoteText}/>
+        <div>
+          <label>Note text</label>
+          <input type='text' value={newNoteText} onChange={updateNewNoteText}/>
+        </div>
+        <label>Position X</label>
         <input
           type='number'
           defaultValue={NOTE_MIN_X_POSITION}
@@ -87,7 +91,8 @@ const Board: React.FC = () => {
           onChange={updateNewNotePosX}
           min={NOTE_MIN_X_POSITION}
           max={NOTE_MAX_X_POSITION}
-        />
+          />
+        <label>Position Y</label>
         <input
           type='number'
           value={newNotePosY}
@@ -95,6 +100,7 @@ const Board: React.FC = () => {
           min={NOTE_MIN_Y_POSITION}
           max={NOTE_MAX_Y_POSITION}
         />
+        <label>Height</label>
         <input
           type='number'
           value={newNoteHeight}
@@ -102,6 +108,7 @@ const Board: React.FC = () => {
           min={NOTE_MIN_HEIGHT}
           max={NOTE_MAX_HEIGHT}
         />
+        <label>Width</label>
         <input
           type='number'
           value={newNoteWidth}
