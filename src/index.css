@@ -5,9 +5,65 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  .board-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 50vw;
+  }
+
+  .board-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: #f5f5f5;
+    overflow: hidden;
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .notelist-container {
+    height: 100vh;
+    width: 75vw;
+
+    .note-container {
+      border-style: solid;
+      border-color: black;
+      position: absolute;
+
+      .note-text {
+        border: none;
+        padding: 10px;
+        background-color: transparent;
+        resize: none;
+      }
+    }
+  }
+
+  .trash-area {
+    cursor: default;
+    height: 100vh;
+    width: 25vw;
+    border: 1px;
+    border-style: dashed;
+    background-color: red;
+    opacity: 35%;
+
+    .text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        position: relative;
+        top: 45%;
+        color: white;
+        font-size: 30px;
+
+        .fa-trash {
+          margin-top: 25px;
+        }
+    }
+  }
 }
