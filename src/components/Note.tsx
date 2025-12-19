@@ -1,3 +1,4 @@
+import { useCallback } from "react";
 import { useEffect } from "react";
 
 export type NoteType = {
@@ -16,6 +17,23 @@ type NoteProps = {
 
 
 const Note: React.FC<NoteProps> = ({ note, onUpdate }) => {
+  const target = document.getElementsByClassName('note-container')[0];
+
+  const onDragEnd = useCallback((e) => {
+    onUpdate(note.id, {
+      x: e.clientX,
+      y: e.clientY,
+    });
+  }, [note, onUpdate]);
+
+  useEffect(() => {
+    if (!target) return;
+    target.addEventListener("dragend", onDragEnd);
+    return () => {
+      target.removeEventListener("dragend", onDragEnd);
+    };
+  }, [onDragEnd, target]);
+
   return (
     <div
       id={note.id}
