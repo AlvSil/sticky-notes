@@ -1,11 +1,10 @@
 # Task
 Implement a single-page web application for sticky notes.
 
-# Features
-Create a new note of the specified size at the specified position.
-Change note size by dragging.
-Move a note by dragging.
-Remove a note by dragging it over a predefined "trash" zone.
+# Features I have committed myself to do
+Create a new note of the specified size at the specified position. [DONE]
+Move a note by dragging. [WIP - basic, would like to improve]
+Remove a note by dragging it over a predefined "trash" zone. [WIP - not working]
 
 # How to run
 
